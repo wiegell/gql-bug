@@ -1,0 +1,27 @@
+schema {
+  query: Query
+}
+
+interface HasId {
+  id: ID!
+}
+
+type Droid implements HasId {
+  id: ID!
+  name: String!
+  primaryFunction: String!
+}
+
+type Fruit implements HasId {
+  id: ID!
+  taste: String!
+}
+
+type Hat implements HasId {
+  id: ID!
+  taste: String!
+}
+
+type Query {
+  character(id: ID!): HasId
+}

@@ -1,0 +1,20 @@
+query GetHasId {
+  character(id: "R2-D2") {
+    ... on Droid {
+      ...DroidFragment
+    }
+    ... on Fruit {
+      ...FruitFragment
+    }
+  }
+}
+
+fragment DroidFragment on Droid {
+  id
+  primaryFunction
+}
+
+fragment FruitFragment on Fruit {
+  id
+  taste
+}
